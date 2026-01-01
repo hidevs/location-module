@@ -11,14 +11,10 @@ class LocationDatabaseSeeder extends BaseSeeder
 {
     public function init(): void
     {
-        ini_set('memory_limit', '4096M');
-        $this->seedFromSqlFile(module_path('Location', 'database/sql/regions.sql'));
-        $this->seedFromSqlFile(module_path('Location', 'database/sql/subregions.sql'));
-        $this->seedFromSqlFile(module_path('Location', 'database/sql/countries.sql'));
-        $this->seedFromSqlFile(module_path('Location', 'database/sql/states.sql'));
-
-        foreach (range(1, 3) as $i) {
-            $this->seedFromSqlFile(module_path('Location', "database/sql/cities.{$i}.sql"));
+        ini_set('memory_limit', '256M');
+        foreach (glob(module_path('Location', 'database/sql/*.sql')) as $filepath) {
+            $this->command->info("  - Seeding " . last(explode('/', $filepath)));
+            $this->seedFromSqlFile($filepath);
         }
     }
 

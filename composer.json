@@ -1,0 +1,32 @@
+{
+    "name": "hidevs/location-module",
+    "description": "",
+    "type": "laravel-module",
+    "authors": [
+        {
+            "name": "HiDevs Studioi",
+            "email": "hidevs.studio@gmail.com"
+        }
+    ],
+    "extra": {
+        "module-dir": "Location",
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Location\\": "app/",
+            "Modules\\Location\\Database\\Factories\\": "database/factories/",
+            "Modules\\Location\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Location\\Tests\\": "tests/"
+        }
+    }
+}

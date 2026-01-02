@@ -11,7 +11,7 @@ class LocationDatabaseSeeder extends BaseSeeder
 {
     public function init(): void
     {
-        ini_set('memory_limit', '256M');
+        ini_set('memory_limit', '512M');
         foreach (glob(module_path('Location', 'database/sql/*.sql')) as $filepath) {
             $this->command->info("  - Seeding " . last(explode('/', $filepath)));
             $this->seedFromSqlFile($filepath);

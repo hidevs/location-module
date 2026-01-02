@@ -5,7 +5,6 @@ namespace Modules\Location\Database\Seeders;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Modules\General\Contracts\Seeder\BaseSeeder;
-use Modules\Location\Models\City;
 
 class LocationDatabaseSeeder extends BaseSeeder
 {
